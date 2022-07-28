@@ -5,37 +5,72 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Bootstrap</title>
+	<link rel="icon" href="/img/ball.png">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
 		integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 
-
 	<style>
-		.accordion-button:after {
-			content: '';
-			background-image: url(/img/plus.svg);
+		a {
+			text-decoration: none;
+			color: black;
+			font-size: 24px;
+		}
+
+		.carousel-indicators [data-bs-target] {
+			width: 15px;
+			height: 15px;
+			border-radius: 50%;
+		}
+
+		.accordion-button::after {
+			background-image: url(/img/plus-lg.svg);
 		}
 
 		.accordion-button:not(.collapsed):after {
-			content: '';
-			background-image: url(/img/plus.svg);
+			background-image: url(/img/plus-lg.svg);
+		}
+
+		.text-form {
+			text-align: center;
+		}
+
+		.carousel-bottom {
+			margin-bottom: 30px;
+		}
+
+		.container-bottom {
+			margin-bottom: 30px;
+		}
+
+		.container-bottom__four {
+			margin-bottom: 30px;
+		}
+
+		.form-control {
+			width: 400px;
+		}
+
+		.btn {
+			width: 200px;
 		}
 	</style>
 </head>
 
 <body>
+	<!-- 1 блок -->
 	<header>
 		<div class="nav">
 			<div class="container">
 				<div class="row align-items-center">
-					<div class="col-xxl-2">
+					<div class="col-xl-2">
 						<a href="#"><img src="/img/bugatti.png" alt="gravity" class="logo" width="80"></a>
 					</div>
-					<div class="col-xxl-8">
+					<div class="col-xl-8">
 						<a href="#">Home.</a>
 						<a href="#">Blog.</a>
 						<a href="#">About.</a>
 					</div>
-					<div class="col-xxl-2">
+					<div class="col-xl-2">
 						<button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal"
 							data-bs-target="#exampleModal">Registration</button>
 					</div>
@@ -64,7 +99,8 @@
 			</div>
 		</div>
 	</header>
-	<!-- Второй блок -->
+
+	<!-- 2 блок -->
 	<main>
 		<section>
 			<div id="carouselExampleIndicators" class="carousel slide container" data-bs-ride="true">
@@ -80,7 +116,7 @@
 					<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4"
 						aria-label="Slide 5"></button>
 				</div>
-				<div class="carousel-inner">
+				<div class="carousel-inner carousel-bottom">
 					<div class="carousel-item active">
 						<img src="https://images.wallpaperscraft.ru/image/single/bashnia_zdaniia_gorod_323932_1280x720.jpg"
 							class="d-block w-100" alt="phon1">
@@ -115,116 +151,365 @@
 				</button>
 			</div>
 		</section>
-		<!-- секция 3 -->
-		<section>
-			<div class="accordion accordion-flush container" id="accordionFlushExample">
-				<div class="col-xxl-5">
-					<div class="accordion-item">
-						<h2 class="accordion-header" id="flush-headingOne">
-							<button class="accordion-button collapsed " type="button" data-bs-toggle="collapse"
-								data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-								Accordion Item #1
-							</button>
-						</h2>
-						<div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
-							data-bs-parent="#accordionFlushExample">
-							<div class="accordion-body">Placeholder content for this accordion, which is intended to
-								demonstrate
-								the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
+
+		<!-- 3 блок-->
+		<div class="container container-bottom">
+			<div class="row">
+				<div class="col-xl-5">
+					<div class="accordion" id="accordionExample">
+						<div class="accordion-item">
+							<h2 class="accordion-header" id="headingOne">
+								<button class="accordion-button" type="button" data-bs-toggle="collapse"
+									data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+									Accordion Item #1
+								</button>
+							</h2>
+							<div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+								data-bs-parent="#accordionExample">
+								<div class="accordion-body">
+									<strong>This is the first item's accordion body.</strong> It is shown by default, until the
+									collapse plugin adds the appropriate classes that we use to style each element. These classes
+									control the overall appearance, as well as the showing and hiding via CSS transitions. You
+									can modify any of this with custom CSS or overriding our default variables. It's also worth
+									noting that just about any HTML can go within the <code>.accordion-body</code>, though the
+									transition does limit overflow.
+								</div>
+							</div>
 						</div>
-					</div>
-					<div class="accordion-item">
-						<h2 class="accordion-header" id="flush-headingTwo">
-							<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-								data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-								Accordion Item #2
-							</button>
-						</h2>
-						<div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
-							data-bs-parent="#accordionFlushExample">
-							<div class="accordion-body">Placeholder content for this accordion, which is intended to
-								demonstrate
-								the <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine
-								this being filled with some actual content.</div>
+						<div class="accordion-item">
+							<h2 class="accordion-header" id="headingTwo">
+								<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+									data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+									Accordion Item #2
+								</button>
+							</h2>
+							<div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+								data-bs-parent="#accordionExample">
+								<div class="accordion-body">
+									<strong>This is the second item's accordion body.</strong> It is hidden by default, until the
+									collapse plugin adds the appropriate classes that we use to style each element. These classes
+									control the overall appearance, as well as the showing and hiding via CSS transitions. You
+									can modify any of this with custom CSS or overriding our default variables. It's also worth
+									noting that just about any HTML can go within the <code>.accordion-body</code>, though the
+									transition does limit overflow.
+								</div>
+							</div>
 						</div>
-					</div>
-					<div class="accordion-item">
-						<h2 class="accordion-header" id="flush-headingThree">
-							<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-								data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-								Accordion Item #3
-							</button>
-						</h2>
-						<div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree"
-							data-bs-parent="#accordionFlushExample">
-							<div class="accordion-body">Placeholder content for this accordion, which is intended to
-								demonstrate
-								the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more
-								exciting happening here in terms of content, but just filling up the space to make it look, at
-								least at first glance, a bit more representative of how this would look in a real-world
-								application.</div>
+						<div class="accordion-item">
+							<h2 class="accordion-header" id="headingThree">
+								<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+									data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+									Accordion Item #3
+								</button>
+							</h2>
+							<div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+								data-bs-parent="#accordionExample">
+								<div class="accordion-body">
+									<strong>This is the third item's accordion body.</strong> It is hidden by default, until the
+									collapse plugin adds the appropriate classes that we use to style each element. These classes
+									control the overall appearance, as well as the showing and hiding via CSS transitions. You
+									can modify any of this with custom CSS or overriding our default variables. It's also worth
+									noting that just about any HTML can go within the <code>.accordion-body</code>, though the
+									transition does limit overflow.
+								</div>
+							</div>
 						</div>
-					</div>
-					<div class="accordion-item">
-						<h2 class="accordion-header" id="flush-headingThree">
-							<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-								data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
-								Accordion Item #4
-							</button>
-						</h2>
-						<div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour"
-							data-bs-parent="#accordionFlushExample">
-							<div class="accordion-body">
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus nisi itaque rerum numquam
-								sint perspiciatis aut nobis cum modi aperiam explicabo, commodi consequatur ratione magnam
-								fugiat eius. Officiis, repellendus molestiae.
+						<div class="accordion-item">
+							<h2 class="accordion-header" id="headingFour">
+								<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+									data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+									Accordion Item #4
+								</button>
+							</h2>
+							<div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+								data-bs-parent="#accordionExample">
+								<div class="accordion-body">
+									<strong>This is the third item's accordion body.</strong> It is hidden by default, until the
+									collapse plugin adds the appropriate classes that we use to style each element. These classes
+									control the overall appearance, as well as the showing and hiding via CSS transitions. You
+									can modify any of this with custom CSS or overriding our default variables. It's also worth
+									noting that just about any HTML can go within the <code>.accordion-body</code>, though the
+									transition does limit overflow.
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-				<div class="col-xxl-6">
-					<ul class="nav nav-tabs" id="myTab" role="tablist">
-						<li class="nav-item" role="presentation">
-							<button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane"
-								type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Home</button>
-						</li>
-						<li class="nav-item" role="presentation">
-							<button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane"
-								type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Profile</button>
-						</li>
-						<li class="nav-item" role="presentation">
-							<button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane"
-								type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false">Contact</button>
-						</li>
-						<li class="nav-item" role="presentation">
-							<button class="nav-link" id="disabled-tab" data-bs-toggle="tab" data-bs-target="#disabled-tab-pane"
-								type="button" role="tab" aria-controls="disabled-tab-pane" aria-selected="false"
-								disabled>Disabled</button>
-						</li>
-					</ul>
-					<div class="tab-content" id="myTabContent">
-						<div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab"
-							tabindex="0">...</div>
-						<div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab"
-							tabindex="0">...</div>
-						<div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab"
-							tabindex="0">...</div>
-						<div class="tab-pane fade" id="disabled-tab-pane" role="tabpanel" aria-labelledby="disabled-tab"
-							tabindex="0">...</div>
+				<div class="col-xl-7">
+					<nav>
+						<div class="nav nav-tabs" id="nav-tab" role="tablist">
+							<button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home"
+								type="button" role="tab" aria-controls="nav-home" aria-selected="true">Home</button>
+							<button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile"
+								type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Profile</button>
+							<button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact"
+								type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Contact</button>
+							<button class="nav-link" id="nav-disabled-tab" data-bs-toggle="tab" data-bs-target="#nav-disabled"
+								type="button" role="tab" aria-controls="nav-disabled" aria-selected="false">Disabled</button>
+						</div>
+					</nav>
+					<div class="tab-content" id="nav-tabContent">
+						<div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab"
+							tabindex="0">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic aperiam doloremque
+							dolore
+							fugiat dolores! Ullam ad placeat minus vel consequuntur dignissimos id harum recusandae sunt, animi
+							perferendis consectetur, alias tempora?
+							<div>
+								<button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal"
+									data-bs-target="#exampleModal2">
+									Launch demo modal
+								</button>
+							</div>
+						</div>
+						<!-- modal -->
+						<div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel"
+							aria-hidden="true">
+							<div class="modal-dialog modal-sm">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h5 class="modal-title" id="exampleModalLabel">Мелкое модальное окно</h5>
+										<button type="button" class="btn-close" data-bs-dismiss="modal"
+											aria-label="Close"></button>
+									</div>
+									<div class="modal-body">
+										Тут немного контента
+									</div>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-secondary btn-sm"
+											data-bs-dismiss="modal">Close</button>
+										<button type="button" class="btn btn-primary btn-sm">Save changes</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab"
+							tabindex="0">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Asperiores mollitia suscipit
+							doloribus exercitationem eum temporibus necessitatibus iure similique iste cupiditate quam quae,
+							recusandae sunt aspernatur dolore eaque odio. Nobis, aspernatur?
+							<div>
+								<button type="button" class="btn btn-primary" data-bs-toggle="modal"
+									data-bs-target="#exampleModal3">
+									Launch demo modal
+								</button>
+							</div>
+						</div>
+						<!-- modal -->
+						<div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel"
+							aria-hidden="true">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h5 class="modal-title" id="exampleModalLabel">обычное модальное окно</h5>
+										<button type="button" class="btn-close" data-bs-dismiss="modal"
+											aria-label="Close"></button>
+									</div>
+									<div class="modal-body">
+										Нормально контента
+									</div>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+										<button type="button" class="btn btn-primary">Save changes</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab"
+							tabindex="0">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim sequi fugiat
+							dignissimos?
+							Aperiam placeat accusamus impedit explicabo, asperiores error molestiae quis vel, ratione
+							repudiandae,
+							et voluptates voluptatem laborum voluptatibus? Sed.
+							<div>
+								<button type="button" class="btn btn-success btn-lg" data-bs-toggle="modal"
+									data-bs-target="#exampleModal4">
+									Launch demo modal
+								</button>
+							</div>
+						</div>
+						<!-- modal -->
+						<div class="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel"
+							aria-hidden="true">
+							<div class="modal-dialog modal-lg">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h5 class="modal-title" id="exampleModalLabel">Большое модальное окно</h5>
+										<button type="button" class="btn-close" data-bs-dismiss="modal"
+											aria-label="Close"></button>
+									</div>
+									<div class="modal-body">
+										Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum perferendis deleniti
+										aliquid ad quidem nesciunt, pariatur vitae illo reprehenderit ab, sequi itaque quia
+										corporis officia quisquam, asperiores perspiciatis consectetur doloremque nemo! Labore non
+										doloribus amet itaque? Impedit laudantium officiis, eum voluptate quae iusto minima, sit
+										natus ipsa necessitatibus, nam eos. Fugiat natus rerum distinctio iure earum a voluptatum
+										quo ratione. Eveniet quisquam, iusto ullam perferendis earum dignissimos nostrum sint quae
+										eius molestias? Iusto tempore ut quia culpa, quasi necessitatibus. Obcaecati quidem libero
+										minima, consequatur, totam facilis perspiciatis aliquid iusto aspernatur porro recusandae!
+										Aspernatur, id quo? Quis, corrupti nemo perspiciatis magnam totam laborum, consequatur
+										aspernatur quibusdam, voluptates animi nam quo officia laudantium et esse error illo ab
+										unde cupiditate praesentium nesciunt natus odit incidunt hic. Nesciunt fuga rerum expedita
+										ipsum omnis temporibus, perspiciatis eveniet ut mollitia maiores sapiente facere
+										doloremque labore nostrum illo eum quos aliquam fugiat quo minima corrupti amet
+										consequatur. Voluptatem culpa asperiores in quia deleniti aliquid ipsam ullam quaerat
+										quasi ipsa. Quibusdam ipsam cumque fugit error et quia commodi nisi dolor laborum, animi,
+										quae deserunt, ratione laudantium. Magni rem blanditiis officiis consequatur id quod
+										inventore eos voluptatum dicta omnis sint illo necessitatibus aliquam, distinctio nostrum
+										corrupti placeat. Inventore laboriosam hic sed quibusdam quisquam deleniti a veritatis
+										tenetur temporibus, voluptatum reiciendis quod eius commodi neque sint harum saepe quo?
+										Nemo molestiae doloremque beatae aspernatur! Labore, perferendis, necessitatibus, quos
+										fugit repellat distinctio error facilis quia harum molestias nostrum sequi beatae
+										doloremque sunt mollitia id ab nulla veniam iure ex eaque velit explicabo. Ab impedit
+										aliquam nulla soluta recusandae facilis qui, expedita praesentium minima ducimus hic
+										magnam tempore dolorem dicta placeat fugiat, suscipit assumenda inventore dolores libero
+										sed perspiciatis amet. Voluptates ipsam nulla quas eos maxime veritatis corporis, officiis
+										non ad illum, cumque tenetur delectus dicta quos explicabo velit temporibus laboriosam
+										officia! Nulla, eum deleniti eaque facere similique optio harum quasi necessitatibus unde
+										doloremque! Nobis at libero inventore commodi cupiditate, odio et veritatis obcaecati fuga
+										quidem reprehenderit aspernatur, quo corrupti quaerat incidunt doloremque fugiat quibusdam
+										exercitationem adipisci?
+									</div>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+										<button type="button" class="btn btn-primary">Save changes</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="tab-pane fade" id="nav-disabled" role="tabpanel" aria-labelledby="nav-disabled-tab"
+							tabindex="0">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis sunt assumenda
+							consequatur
+							laboriosam, provident similique necessitatibus. Dolorem suscipit id dolores labore, odit in ut
+							amet,
+							deserunt blanditiis odio magni doloribus.
+							<div>
+								<button type="button" class="btn btn-outline-warning btn-lg" data-bs-toggle="modal"
+									data-bs-target="#exampleModal5">
+									Launch demo modal
+								</button>
+							</div>
+						</div>
+						<!-- modal -->
+						<div class="modal fade" id="exampleModal5" tabindex="-1" aria-labelledby="exampleModalLabel"
+							aria-hidden="true">
+							<div class="modal-dialog modal-xl">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h5 class="modal-title" id="exampleModalLabel">огромное модальное окно</h5>
+										<button type="button" class="btn-close" data-bs-dismiss="modal"
+											aria-label="Close"></button>
+									</div>
+									<div class="modal-body">
+										Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo ducimus quos voluptates
+										reprehenderit obcaecati sapiente tenetur accusantium, sit libero saepe eos quia doloribus
+										alias, nesciunt iure, atque aspernatur cumque assumenda! Lorem ipsum dolor sit amet
+										consectetur adipisicing elit. Possimus dignissimos magni ea quis consequuntur sint
+										aspernatur voluptatum repellendus tenetur, adipisci officiis similique aut quaerat velit
+										assumenda aliquid, cumque tempore blanditiis nobis deserunt? Reprehenderit quae reiciendis
+										sunt consequatur aperiam iure ut officia molestiae perspiciatis sapiente explicabo laborum
+										aliquid, corrupti iusto facere, sint omnis velit suscipit tempora itaque! Minus assumenda
+										fugiat qui est rerum eveniet, suscipit ullam doloribus corrupti nobis voluptatem quibusdam
+										tempore esse magni quod neque, velit labore molestiae veniam sequi. Tempora mollitia
+										deserunt eos repudiandae quidem numquam facilis dolorem maiores unde quibusdam iste
+										architecto neque ratione iure libero, sequi sed voluptatem saepe nemo, illum, in veniam
+										laboriosam doloremque alias! Laborum maxime nulla beatae! Earum enim id unde dolorem
+										explicabo quis, fugiat magnam ipsam provident debitis sequi rerum alias! Soluta modi ex
+										laboriosam officia quod repellat vitae eius aut ipsum alias, quisquam ea, animi natus
+										accusamus magni libero nostrum neque minus iure delectus. Tempora dolor, sit quis quam
+										veritatis laborum laboriosam ducimus consequuntur voluptas quod mollitia commodi
+										exercitationem repellendus quidem iusto? Itaque, velit delectus aspernatur vero tempora
+										adipisci quisquam molestiae! Quibusdam doloremque enim fugit rerum provident reprehenderit
+										quae eos laborum vel, ex facere. Delectus nostrum odit pariatur excepturi dolorum
+										temporibus tenetur.
+									</div>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-secondary btn-xl"
+											data-bs-dismiss="modal">Close</button>
+										<button type="button" class="btn btn-primary btn-xl">Save changes</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- 4 блок -->
+		<section>
+			<div class="container container-bottom__four">
+				<div class="row">
+					<div class="col-xl-2 ">
+						<p class="text-form">Callback form</p>
+					</div>
+					<div class="col-xl-10">
+						<form action="">
+							<label for="form-name">
+								<input type="text" class="form-control" placeholder="name">
+							</label>
+							<label for="form-tel">
+								<input type="tel" class="form-control" placeholder="380909009090">
+							</label>
+							<button type="button" class="btn btn-primary btn-block">send</button>
+						</form>
 					</div>
 				</div>
 			</div>
 		</section>
 
+		<!-- 5 блок -->
+		<footer>
+			<div class="container">
+				<div class="row">
+					<div class="col-xl-3">
+						<div class="card" style="width: 18rem;">
+							<img src="/img/nadal.jpg" class="card-img-top" alt="..." height="170px">
+							<div class="card-body">
+								<p class="card-text">Some quick example text to build on the card title and make up the bulk of
+									the
+									card's content.</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-xl-3">
+						<div class="card" style="width: 18rem;">
+							<img src="/img/sport.jpg" class="card-img-top" alt="..." height="170px">
+							<div class="card-body">
+								<p class="card-text">Some quick example text to build on the card title and make up the bulk of
+									the
+									card's content.</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-xl-3">
+						<div class="card" style="width: 18rem;">
+							<img src="/img/tennis.jpg" class="card-img-top" alt="..." height="170px">
+							<div class="card-body">
+								<p class="card-text">Some quick example text to build on the card title and make up the bulk of
+									the
+									card's content.</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-xl-3">
+						<div class="card" style="width: 18rem;">
+							<img src="/img/novak.jpg" class="card-img-top" alt="..." height="170px">
+							<div class="card-body">
+								<p class="card-text">Some quick example text to build on the card title and make up the bulk of
+									the
+									card's content.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
 
-	</main>
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+			integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
-	<script src="https://code.jquery.com/jquery-3.6.0.min.js"
-		integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
-		integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
-		crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+			crossorigin="anonymous"></script>
 
 </body>
 
